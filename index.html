@@ -5,7 +5,8 @@
         <meta name="viewport"content="width=device-width,initial-scale=1.0">
         <title>Matsawela Sweet Crumbs Bakery</title>
         <link rel="stylesheet"href="css/style.css">
-    </head>
+        <script defer src="script.js"></script>
+</head>
     <body>
 
         <header>
@@ -24,13 +25,30 @@
       <main>
         <section class="hero">
             <h2>Freshly Baked Happiness</h2>
+             <h3 id="greeting"></h3>
+  <button id="themeToggle">Toggle Theme</button>
             <p>Explore our artisan breads,cakes,and pastries</p>
             <img src="c:\Users\MATSAWELA\Desktop\logo.png" alt="Bakery Logo">
         </section>
+
+        <section class="slider reveal">
+  <div class="slide"><img src="images/22-10-Wholesale-Bakery-Bread-Pastry-WEB-0233-Edit-1.jpg"></div>
+  <div class="slide"><img src="images/66c8b628837bef36b128a8d5_pexels-igor-ovsyannykov-205961-scaled.webp"></div>
+  <div class="slide"><img src="images/9709e1412cba981ceee7f21cba4065bd.jpeg"></div>
+</section>
+
       </main> 
       
       <footer>
         <p>&copy;2025 Matsawela Sweet Crumbs Bakery</p>
       </footer>
+      <div id="specialModal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal">&times;</span>
+    <h2>🎉 Today's Special Offer!</h2>
+    <p>Buy 3 cupcakes & get 1 FREE!</p>
+  </div>
+</div>
+
 </body>
 </html>

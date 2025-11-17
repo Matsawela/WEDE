@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Matsawela Sweet Crumbs Bakery</title>
   <link rel="stylesheet" href="css/style.css">
+  <script defer src="script.js"></script>
+
 </head>
 <body>
 
@@ -26,16 +28,47 @@
   <p> Benoni, Johannesburg</p>
   <p>079 539 0982</p>
 
-  <form>
-    <label for="message">Send us a message:</label>
-    <textarea id="message" name="message" rows="4"></textarea>
-    <button type="submit">Send</button>
-  </form>
 </main>
 
  <footer>
     <p>&copy; 2025 Matsawela Sweet Crumbs Bakery</p>
   </footer>
 
+
+<form id="contactForm" action="mailto:info@matsawelabakery.co.za" method="post" enctype="text/plain" onsubmit="return validateContact();">
+  <label>Full Name:</label>
+  <input type="text" id="cName">
+
+  <label>Email:</label>
+  <input type="email" id="cEmail">
+
+  <label>Message Category:</label>
+  <select id="messageType">
+    <option>General Message</option>
+    <option>Complaint</option>
+    <option>Compliment</option>
+  </select>
+
+  <label>Your Message:</label>
+  <textarea id="cMessage"></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
+<script>
+function validateContact() {
+  let name = document.getElementById("cName").value;
+  let email = document.getElementById("cEmail").value;
+  let message = document.getElementById("cMessage").value;
+
+  if (name === "" || email === "" || message === "") {
+    alert("All fields must be completed.");
+    return false;
+  }
+  alert("Message sent successfully!");
+  return true;
+}
+</script>
 </body>
+
 </html>
