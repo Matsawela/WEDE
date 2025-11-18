@@ -2,9 +2,9 @@
 function displayGreeting() {
     const greeting = document.getElementById("greeting");
     const hour = new Date().getHours();
-    let message = (hour < 12) ? "Good Morning! Start your day with freshly baked treats 🍞" :
-                  (hour < 18) ? "Good Afternoon! Enjoy Sweet Crumbs Delights 🍪" :
-                  "Good Evening! Treat yourself to cupcakes 🧁";
+    let message = (hour < 12) ? "Good Morning! Start your day with freshly baked treats " :
+                  (hour < 18) ? "Good Afternoon! Enjoy Sweet Crumbs Delights " :
+                  "Good Evening! Treat yourself to cupcakes ";
     greeting.textContent = message;
 }
 displayGreeting();
