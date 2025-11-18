@@ -8,12 +8,10 @@ function displayGreeting() {
 }
 displayGreeting();
 
-// Theme Toggle
 const themeToggle = document.getElementById("themeToggle");
 themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 });
-
 const modal = document.getElementById("specialModal");
 const closeModal = document.getElementById("closeModal");
 
@@ -48,6 +46,11 @@ function updateCart() {
     const totalDisplay = document.getElementById("totalPrice");
     cartContainer.innerHTML = "";
     let total = 0;
+    function updateCartCount() {
+    document.getElementById("cartCount").textContent = cart.reduce((total, item) => total + item.quantity, 0);
+}
+updateCartCount(); // initial call
+
 
     cart.forEach((item, index) => {
         total += item.price * item.quantity;
@@ -98,13 +101,42 @@ document.getElementById("clearCart").addEventListener("click", () => {
     }
 });
 
-updateCart();
+updateCartCount();
+if (window.location.pathname.includes("checkout.html")) {
+    const checkoutContainer = document.getElementById("checkoutItems");
+    const checkoutTotal = document.getElementById("checkoutTotal");
 
-// Scroll reveal animation
-window.addEventListener("scroll", () => {
-    document.querySelectorAll(".reveal").forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-            el.classList.add("active");
-        }
+    let total = 0;
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+        checkoutContainer.innerHTML += `
+        <div class="cart-item">
+          <h4>${item.name} - ${item.quantity}</h4>
+          <p>R${item.price * item.quantity}</p>
+        </div>
+        `;
     });
+
+    checkoutTotal.textContent = "Total: R" + total.toFixed(2);
+}
+
+document.getElementById("finishOrder")?.addEventListener("click", () => {
+    startConfetti();
+    setTimeout(() => {
+        alert("🎉 Order Successfully Placed! Thank you for supporting Sweet Crumbs Bakery 🙏");
+        cart = [];
+        saveCart();
+        updateCart();
+        window.location.href = "index.html";
+    }, 3000);
 });
+
+function startConfetti() {
+    const confetti = document.createElement("div");
+    confetti.className = "confetti";
+    document.body.appendChild(confetti);
+
+    setTimeout(() => confetti.remove(), 2800);
+}
+
+
