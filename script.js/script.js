@@ -35,7 +35,7 @@ showSlides();
 // Form validation
 document.getElementById("contactForm").addEventListener("submit", function(e) {
     e.preventDefault();
-    alert("🎉 Thank you! Your message was submitted successfully.");
+    alert("Thank you! Your message was submitted successfully.");
 });
 
 // Scroll reveal
