@@ -1,8 +1,3 @@
-/* ----------------------------- */
-/*       MATSHAWELA BAKERY      */
-/*    Creative Responsive CSS   */
-/* ----------------------------- */
-
 /* Font Imports */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap');
 
@@ -241,4 +236,47 @@ footer p i {
 @media (max-width: 768px) {
   nav { flex-direction: column; text-align: center; }
   .gallery img { width: 100%; }
+}
+.product-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  text-align: center;
+}
+
+.product-card {
+  background: #ffb6c1;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px #ff69b4;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.add-btn {
+  background: hotpink;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.cart-container {
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.cart-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+  background: #ffe5f0;
+  padding: 10px;
+  border-radius: 10px;
 }
